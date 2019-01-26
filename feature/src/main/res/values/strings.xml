@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="question_stolica_polski">Czy Warszawa jest stolica Polski?</string>
-    <string name="question_stolica_dolnego_slaska">Czy Gdynia jest stolica Dolnego Slaska?</string>
-    <string name="question_sniezka">Czy Sniezka jest najwyzszym punktem Sudetow?</string>
-    <string name="question_wisla">Czy Wisla przeplywa przez Warszawe?</string>
-    <string name="score">Wynik: %1$d / %2$d</string>
-    <string name="end_text">Koniec quizu</string>
+    <string name="item_title">%1$s</string>
 </resources>
