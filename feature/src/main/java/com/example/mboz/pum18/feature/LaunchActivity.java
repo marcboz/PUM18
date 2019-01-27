@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.TimeZone;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LaunchActivity extends AppCompatActivity {
     Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
 
     String requestURL = "https://a2.wykop.pl/Links/Top/" + calendar.get(Calendar.YEAR) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/appkey/QBP7k6rRJG";
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onResponse(JSONObject response) {
             String requestResponse = response.toString();
-            Intent intent = new Intent(MainActivity.this, ListActivity.class);
+            Intent intent = new Intent(LaunchActivity.this, ListActivity.class);
             intent.putExtra("requestData", requestResponse);
             startActivity(intent);
         }
@@ -51,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
+        WebRequest.getInstance(this).addToRequestQueue(request);
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
         WebRequest.getInstance(this).addToRequestQueue(request);
     }
 }
